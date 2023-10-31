@@ -168,15 +168,30 @@
       display: flex;
 
       li {
-        list-style: none;
+        width: 120px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         margin: 10px;
+        position: relative;
         cursor: pointer;
 
         &:after {
-          height: 2px;
-          width: 100%;
-          background: orange;
+          content: "";
+          width: 0%;
+          height: 100%;
+          display: block;
+          position: absolute;
+          border-bottom: 2px solid orange;
+          top: 0;
+          right: 0;
+          transition: all 0.3s ease;
         }
+      }
+
+      li:hover:after {
+        width: 100%;
       }
     }
   }
