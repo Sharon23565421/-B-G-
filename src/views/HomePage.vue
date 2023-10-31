@@ -14,19 +14,24 @@
           <ul>
             <span>(B/G)</span>
             <li>
-              <router-link to="" class="mrt">
+              <div class="service" @click="scrollService()">
                 <p>SERVICE</p>
-              </router-link>
+              </div>
             </li>
             <li>
-              <router-link to="" class="team">
+              <div class="showreel" @click="scrollShowreel()">
+                <p>SHOWREEL</p>
+              </div>
+            </li>
+            <li>
+              <div class="team" @click="scrollTeam()">
                 <p>TEAM</p>
-              </router-link>
+              </div>
             </li>
             <li>
-              <router-link to="" class="contact">
+              <div class="contact" @click="scrollContact()">
                 <p>CONTACT</p>
-              </router-link>
+              </div>
             </li>
           </ul>
         </div>
@@ -37,17 +42,17 @@
     </div>
 
     <div class="scrollArea">
-      <div class="navbar">
+      <div class="navbar" :class="{ isScrolled: isScrolled }">
         <span class="logo">(B/G)</span>
         <ul class="nav">
-          <li>SERVICE</li>
-          <li>SHOWREEL</li>
-          <li>TEAM</li>
-          <li>CONTACT</li>
+          <li @click="scrollService()">SERVICE</li>
+          <li @click="scrollShowreel()">SHOWREEL</li>
+          <li @click="scrollTeam()">TEAM</li>
+          <li @click="scrollContact()">CONTACT</li>
         </ul>
       </div>
 
-      <div class="servicePage">
+      <div class="servicePage" id="servicePage">
         <div class="title">
           <h2>SERVICE</h2>
           <span>Lorem ipsum dolor sit.</span>
@@ -93,7 +98,7 @@
         </div>
       </div>
 
-      <div class="showreelPage">
+      <div class="showreelPage" id="showreelPage">
         <div class="title">
           <h2>SHOWREEL</h2>
           <span>Lorem ipsum dolor sit.</span>
@@ -144,7 +149,7 @@
         <div class="more">more</div>
       </div>
 
-      <div class="teamPage">
+      <div class="teamPage" id="teamPage">
         <div class="title">
           <h2>TEAM</h2>
           <span>Lorem ipsum dolor sit.</span>
@@ -189,7 +194,7 @@
     </div>
   </div>
 
-  <div class="contactPage">
+  <div class="contactPage" id="contactPage">
     <div class="lightPink">
       <div class="contactUs">
         <h2>CONCACT</h2>
@@ -240,12 +245,43 @@ export default {
     return {
       open: false,
       showHomeNav: false,
+      isScrolled: "",
     };
   },
 
-  watch: {},
-
   methods: {
+    scrollService() {
+      document
+        .querySelector("#servicePage")
+        .scrollIntoView({ behavior: "smooth" });
+    },
+
+    scrollShowreel() {
+      document
+        .querySelector("#showreelPage")
+        .scrollIntoView({ behavior: "smooth" });
+    },
+
+    scrollTeam() {
+      document
+        .querySelector("#teamPage")
+        .scrollIntoView({ behavior: "smooth" });
+    },
+
+    scrollContact() {
+      document
+        .querySelector("#contactPage")
+        .scrollIntoView({ behavior: "smooth" });
+    },
+
+    // handleScroll() {
+    //   const scrollY = window.scrollY;
+
+    //   const blockHeight1 = this.$refs.block1.offsetHeight;
+    //   const blockHeight2 = this.$refs.block2.offsetHeight;
+    //   const blockHeight3 = this.$refs.block3.offsetHeight;
+    // },
+
     toggleNav() {
       this.open = !this.open;
       this.showHomeNav = !this.showHomeNav;
@@ -269,5 +305,9 @@ export default {
 .swiper-button-prev,
 .swiper-button-next {
   color: #fff !important;
+}
+
+.isScrolled {
+  color: yellow;
 }
 </style>

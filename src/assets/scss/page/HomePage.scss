@@ -30,7 +30,7 @@
             font-weight: 800;
           }
 
-          :hover a {
+          :hover div {
             position: absolute;
             z-index: 6;
           }
@@ -40,7 +40,7 @@
           }
 
           li {
-            a {
+            div {
               position: absolute;
               width: 100%;
 
@@ -269,6 +269,7 @@
   }
 
   .teamPage {
+    padding: 5% 0;
     height: calc(100vh - 80px);
 
     .card {
