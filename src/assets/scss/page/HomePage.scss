@@ -1,0 +1,643 @@
+.title {
+  margin: 5%;
+  text-align: center;
+}
+
+.sky {
+  background-color: #000;
+  width: 100%;
+
+  .logoPage {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    .header-container {
+      position: absolute;
+      right: 0;
+      z-index: 10;
+      display: none;
+
+      .homeNav {
+        ul {
+          display: flex;
+          margin-top: 20%;
+          align-items: center;
+
+          :hover p {
+            font-size: 75px;
+            font-weight: 800;
+          }
+
+          :hover a {
+            position: absolute;
+            z-index: 6;
+          }
+
+          span {
+            font-size: 50px;
+          }
+
+          li {
+            a {
+              position: absolute;
+              width: 100%;
+
+              p {
+                color: #fff;
+                transition: all 0.2s;
+              }
+            }
+          }
+        }
+      }
+
+      .header-menu {
+        height: 50px;
+        width: 50px;
+        position: fixed;
+        transform: translate(-150%, 60%);
+        z-index: 10;
+        background: #222;
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        .hambergerIcon {
+          height: 5px;
+          width: 60%;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          border-radius: 50px;
+          background-color: white;
+          transform: translate(-50%, -50%) rotate(0deg);
+          transition: all ease 0.5s;
+
+          &::before,
+          &::after {
+            content: "";
+            position: absolute;
+            height: inherit;
+            border-radius: inherit;
+            background-color: white;
+            margin: auto;
+            width: 50%;
+            transition: all ease 0.5s;
+          }
+
+          &::before {
+            width: 100%;
+          }
+
+          &::before {
+            top: -10px;
+            left: 0;
+            transform-origin: left;
+          }
+
+          &::after {
+            bottom: -10px;
+            right: 0;
+            transform-origin: right;
+          }
+        }
+
+        .open {
+          background-color: white;
+          transform: translate(-50%, -50%) rotate(135deg);
+
+          &::before {
+            background-color: white;
+            top: 0;
+            transform: translate(50%, 280%) rotate(-90deg);
+          }
+
+          &::after {
+            background-color: white;
+            bottom: 0;
+            transform: translateX(-100%) rotate(-90deg);
+          }
+        }
+      }
+    }
+  }
+
+  h1 {
+    font-size: 75px;
+    inset: 0;
+    margin: auto;
+  }
+
+  .scrollBtn {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .line {
+    height: 20%;
+    width: 1px;
+    background: white;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    margin-block: 5px;
+  }
+}
+
+.scrollArea {
+  .navbar {
+    background-color: rgba($color: #333, $alpha: 0.8);
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 3%;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+
+    .logo {
+      font-size: 30px;
+    }
+
+    .nav {
+      display: flex;
+
+      li {
+        list-style: none;
+        margin: 10px;
+        cursor: pointer;
+
+        &:after {
+          height: 2px;
+          width: 100%;
+          background: orange;
+        }
+      }
+    }
+  }
+
+  .servicePage {
+    padding: 5% 0;
+
+    .aboutService {
+      max-width: 600px;
+      margin-inline: auto;
+
+      .block {
+        display: flex;
+        padding: 5%;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        &:nth-of-type(2) {
+          flex-direction: row-reverse;
+        }
+
+        .txtArea {
+          width: 50%;
+          margin-block: auto;
+
+          .s-title {
+            margin-bottom: 10%;
+            padding-left: 10%;
+          }
+
+          .txt {
+            border-left: 6px solid white;
+            padding-left: 8%;
+          }
+        }
+      }
+    }
+  }
+
+  .showreelPage {
+    padding: 5% 0;
+    height: calc(100vh - 80px);
+
+    .more {
+      width: fit-content;
+      padding: 10px 80px;
+      border: 1px solid white;
+      border-radius: 20px;
+      margin-inline: auto;
+    }
+
+    .showreelRWD {
+      display: none;
+    }
+
+    .swiperArea {
+      margin: 5% 0;
+      padding-block: 5%;
+      background-color: rgba($color: #333, $alpha: 0.5);
+
+      .swiper {
+        width: 90%;
+
+        .swiper-slide {
+          display: flex;
+          justify-content: center;
+
+          img {
+            display: block;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+
+  .teamPage {
+    height: calc(100vh - 80px);
+
+    .card {
+      display: flex;
+      padding: 0 10%;
+      justify-content: space-between;
+      padding-bottom: 10%;
+
+      .teamBlock {
+        width: 30%;
+        background-color: rgba($color: #333, $alpha: 0.5);
+        padding: 2.5%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+
+        &:nth-of-type(1) {
+          top: 60px;
+        }
+
+        &:nth-of-type(2) {
+          top: 30px;
+        }
+
+        h3 {
+          position: relative;
+          margin-bottom: 8%;
+
+          &::after {
+            content: "";
+            position: absolute;
+            width: 35px;
+            height: 2px;
+            background: white;
+            right: 105%;
+            top: 10px;
+          }
+        }
+
+        img {
+          width: 50%;
+          border-radius: 50%;
+          inset: 0;
+          margin: 8% auto;
+        }
+
+        .txt {
+          margin-top: 8%;
+        }
+      }
+    }
+  }
+}
+
+.contactPage {
+  height: 100vh;
+  display: flex;
+
+  .lightPink {
+    width: 50%;
+    background-color: LavenderBlush;
+    color: #705555;
+
+    .contactUs {
+      width: 50%;
+      inset: 0;
+      margin: 20% auto;
+      position: relative;
+      left: 10%;
+
+      h2 {
+        font-size: 40px;
+        line-height: 45px;
+      }
+      p {
+        margin-bottom: 30%;
+        width: fit-content;
+      }
+
+      .contactTel {
+        display: flex;
+        flex-wrap: wrap;
+        border-bottom: 1px solid #aaa;
+        padding-bottom: 5%;
+        margin-bottom: 5%;
+
+        .phoneNum {
+          svg {
+            width: 15%;
+            color: tomato;
+          }
+
+          h3 {
+            width: 85%;
+            font-size: 25px;
+            line-height: 35px;
+            color: tomato;
+          }
+        }
+
+        p {
+          margin-top: 3%;
+          margin-bottom: 0;
+        }
+      }
+
+      span {
+        font-size: 40px;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .brown {
+    width: 50%;
+    background-color: #705555;
+    color: LavenderBlush;
+
+    .inputArea {
+      inset: 0;
+      margin: 20% auto;
+      position: relative;
+      left: -10%;
+      width: fit-content;
+
+      input {
+        background: #705555;
+        border: transparent;
+        border-bottom: 1px solid LavenderBlush;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .title {
+    margin: 15%;
+  }
+
+  .hbclose {
+    display: none;
+  }
+
+  .sky {
+    .logoPage {
+      .header-container {
+        display: block;
+
+        .header-menu {
+          .open {
+            position: fixed;
+            width: 30px;
+            // top: 60px;
+            // right: 10%;
+          }
+        }
+
+        .homeNav {
+          background: #000;
+          display: flex;
+          justify-content: center;
+          position: fixed;
+          height: 100vh;
+          top: 0;
+          width: 100%;
+          margin-top: 0;
+          opacity: 0;
+          left: -100%;
+          transition: all 0.3s ease-in;
+          z-index: 9;
+
+          ul {
+            flex-direction: column;
+            width: 100%;
+
+            :hover p {
+              font-size: 36px;
+            }
+
+            li {
+              width: 100%;
+              writing-mode: inherit;
+              height: 90px;
+              left: -100%;
+              margin-block: 1%;
+              position: relative;
+
+              a {
+                height: 100%;
+
+                p {
+                  position: relative;
+                  margin-top: 8%;
+                  padding-bottom: 0;
+                  padding-right: 0;
+                  font-size: 28px;
+                  text-align: center;
+
+                  &::after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    width: 180px;
+                    height: 12px;
+                    opacity: 0.8;
+                    bottom: 0px;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .showHomeNav {
+          opacity: 1;
+          left: 0;
+          transition: all 0.3s ease-in;
+
+          @keyframes flyInLeft {
+            0% {
+              left: -100%;
+            }
+
+            100% {
+              left: 0;
+            }
+          }
+
+          ul {
+            li:nth-child(2) {
+              animation: flyInLeft 0.2s 0.4s forwards;
+            }
+
+            li:nth-child(3) {
+              animation: flyInLeft 0.2s 0.5s forwards;
+            }
+
+            li:nth-child(4) {
+              animation: flyInLeft 0.2s 0.6s forwards;
+            }
+          }
+        }
+      }
+    }
+
+    .line {
+      height: 10%;
+    }
+
+    .scrollArea {
+      .showreelPage {
+        height: auto;
+
+        .more {
+          background: white;
+          color: #000;
+        }
+
+        .showreelRWD {
+          display: block;
+
+          div {
+            width: fit-content;
+            margin: auto;
+            margin-bottom: 5%;
+          }
+        }
+
+        .swiperArea {
+          display: none;
+        }
+      }
+
+      .navbar {
+        display: none;
+      }
+
+      .servicePage {
+        .aboutService {
+          .block {
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 15%;
+
+            .txtArea {
+              width: 80%;
+              margin-bottom: 10%;
+
+              .s-title {
+                margin-bottom: 5%;
+              }
+            }
+          }
+        }
+      }
+
+      .teamPage {
+        height: auto;
+
+        .card {
+          flex-direction: column;
+          justify-content: center;
+
+          .teamBlock {
+            padding: 5%;
+            top: 0;
+            width: 80%;
+            margin: auto;
+            margin-bottom: 8%;
+
+            h3 {
+              &::after {
+                width: 25px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .contactPage {
+    flex-direction: column;
+
+    .lightPink {
+      width: 100%;
+      background: white;
+      color: #000;
+
+      .contactUs {
+        left: 0;
+        width: 80%;
+        text-align: center;
+
+        .contactTel {
+          border-bottom: none;
+          padding: 0;
+          margin: 0;
+
+          .phoneNum {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+
+            h3 {
+              width: fit-content;
+            }
+          }
+
+          p {
+            text-align: start;
+            margin-top: 5%;
+            padding: 5% 0 5% 5%;
+            border-top: 1px solid #aaa;
+          }
+        }
+
+        p {
+          margin: auto;
+          margin-bottom: 30%;
+        }
+      }
+    }
+
+    .brown {
+      width: 100%;
+      background: black;
+      color: white;
+
+      .inputArea {
+        width: 80%;
+        left: 0;
+
+        input {
+          background: #000;
+          border-bottom: 1px solid white;
+          margin-bottom: 5%;
+        }
+
+        textarea {
+          margin-top: 3%;
+          background: #000;
+        }
+      }
+    }
+  }
+}
